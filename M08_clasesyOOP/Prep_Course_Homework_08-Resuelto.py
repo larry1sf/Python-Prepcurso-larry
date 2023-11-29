@@ -39,7 +39,7 @@ class Vehiculo:
 
     def Frenar(self, vel):
         self.velocidad -= vel
-    
+
     def Doblar(self, grados):
         self.direccion += grados
 
@@ -49,9 +49,9 @@ class Vehiculo:
 # In[6]:
 
 
-a1 = Vehiculo('rojo', 'auto', 2)
-a2 = Vehiculo('blanco', 'camioneta', 3.6)
-a3 = Vehiculo('negro', 'moto', 1)
+a1 = Vehiculo("rojo", "auto", 2)
+a2 = Vehiculo("blanco", "camioneta", 3.6)
+a3 = Vehiculo("negro", "moto", 1)
 
 
 # In[7]:
@@ -83,21 +83,29 @@ class Vehiculo:
 
     def Frenar(self, vel):
         self.velocidad -= vel
-    
+
     def Doblar(self, grados):
         self.direccion += grados
 
     def Estado(self):
-        print('Velocidad:', self.velocidad, '- Dirección:', self.direccion)
+        print("Velocidad:", self.velocidad, "- Dirección:", self.direccion)
 
     def Detalle(self):
-        print('Soy', self.tipo, 'de color', self.color, 'y mi cilindrada es de', self.cilindrada, 'litros')
+        print(
+            "Soy",
+            self.tipo,
+            "de color",
+            self.color,
+            "y mi cilindrada es de",
+            self.cilindrada,
+            "litros",
+        )
 
 
 # In[13]:
 
 
-a1 = Vehiculo('rojo', 'auto', 2)
+a1 = Vehiculo("rojo", "auto", 2)
 a1.Detalle()
 
 
@@ -152,43 +160,43 @@ class Herramientas:
 
     def conversion_grados(self, valor, origen, destino):
         valor_destino = None
-        if (origen == 'celsius'):
-            if (destino == 'celsius'):
+        if origen == "celsius":
+            if destino == "celsius":
                 valor_destino = valor
-            elif (destino == 'farenheit'):
+            elif destino == "farenheit":
                 valor_destino = (valor * 9 / 5) + 32
-            elif (destino == 'kelvin'):
+            elif destino == "kelvin":
                 valor_destino = valor + 273.15
             else:
-                print('Parámetro de Destino incorrecto')
-        elif (origen == 'farenheit'):
-            if (destino == 'celsius'):
+                print("Parámetro de Destino incorrecto")
+        elif origen == "farenheit":
+            if destino == "celsius":
                 valor_destino = (valor - 32) * 5 / 9
-            elif (destino == 'farenheit'):
+            elif destino == "farenheit":
                 valor_destino = valor
-            elif (destino == 'kelvin'):
+            elif destino == "kelvin":
                 valor_destino = ((valor - 32) * 5 / 9) + 273.15
             else:
-                print('Parámetro de Destino incorrecto')
-        elif (origen == 'kelvin'):
-            if (destino == 'celsius'):
+                print("Parámetro de Destino incorrecto")
+        elif origen == "kelvin":
+            if destino == "celsius":
                 valor_destino = valor - 273.15
-            elif (destino == 'farenheit'):
+            elif destino == "farenheit":
                 valor_destino = ((valor - 273.15) * 9 / 5) + 32
-            elif (destino == 'kelvin'):
+            elif destino == "kelvin":
                 valor_destino = valor
             else:
-                print('Parámetro de Destino incorrecto')
+                print("Parámetro de Destino incorrecto")
         else:
-            print('Parámetro de Origen incorrecto')
+            print("Parámetro de Origen incorrecto")
         return valor_destino
 
     def factorial(self, numero):
-        if(type(numero) != int):
-            return 'El numero debe ser un entero'
-        if(numero < 0):
-            return 'El numero debe ser pisitivo'
-        if (numero > 1):
+        if type(numero) != int:
+            return "El numero debe ser un entero"
+        if numero < 0:
+            return "El numero debe ser pisitivo"
+        if numero > 1:
             numero = numero * self.factorial(numero - 1)
         return numero
 
@@ -210,15 +218,15 @@ h.verifica_primo(7)
 # In[29]:
 
 
-listado = [1,8,2,5,4,8,10,7]
-moda, repe = h.valor_modal(listado, True)
-print('El valor modal es', moda, 'y se reptie', repe, 'veces')
+# listado = [1, 8, 2, 5, 4, 8, 10, 7]
+# moda, repe = h.valor_modal(listado, True)
+# print("El valor modal es", moda, "y se reptie", repe, "veces")
 
 
 # In[31]:
 
 
-h.conversion_grados(10, 'celsius', 'kelvin')
+h.conversion_grados(10, "celsius", "kelvin")
 
 
 # In[35]:
@@ -238,18 +246,26 @@ class Herramientas:
 
     def verifica_primo(self):
         for i in self.lista:
-            if (self.__verifica_primo(i)):
-                print('El elemento', i, 'SI es un numero primo')
+            if self.__verifica_primo(i):
+                print("El elemento", i, "SI es un numero primo")
             else:
-                print('El elemento', i, 'NO es un numero primo')
+                print("El elemento", i, "NO es un numero primo")
 
     def conversion_grados(self, origen, destino):
         for i in self.lista:
-            print(i, 'grados', origen, 'son', self.__conversion_grados(i, origen, destino),'grados',destino)
-    
+            print(
+                i,
+                "grados",
+                origen,
+                "son",
+                self.__conversion_grados(i, origen, destino),
+                "grados",
+                destino,
+            )
+
     def factorial(self):
         for i in self.lista:
-            print('El factorial de ', i, 'es', self.__factorial(i))
+            print("El factorial de ", i, "es", self.__factorial(i))
 
     def __verifica_primo(self, nro):
         es_primo = True
@@ -264,7 +280,7 @@ class Herramientas:
         lista_repeticiones = []
         if len(self.lista) == 0:
             return None
-        if (menor):
+        if menor:
             self.lista.sort()
         else:
             self.lista.sort(reverse=True)
@@ -285,43 +301,43 @@ class Herramientas:
 
     def __conversion_grados(self, valor, origen, destino):
         valor_destino = None
-        if (origen == 'celsius'):
-            if (destino == 'celsius'):
+        if origen == "celsius":
+            if destino == "celsius":
                 valor_destino = valor
-            elif (destino == 'farenheit'):
+            elif destino == "farenheit":
                 valor_destino = (valor * 9 / 5) + 32
-            elif (destino == 'kelvin'):
+            elif destino == "kelvin":
                 valor_destino = valor + 273.15
             else:
-                print('Parámetro de Destino incorrecto')
-        elif (origen == 'farenheit'):
-            if (destino == 'celsius'):
+                print("Parámetro de Destino incorrecto")
+        elif origen == "farenheit":
+            if destino == "celsius":
                 valor_destino = (valor - 32) * 5 / 9
-            elif (destino == 'farenheit'):
+            elif destino == "farenheit":
                 valor_destino = valor
-            elif (destino == 'kelvin'):
+            elif destino == "kelvin":
                 valor_destino = ((valor - 32) * 5 / 9) + 273.15
             else:
-                print('Parámetro de Destino incorrecto')
-        elif (origen == 'kelvin'):
-            if (destino == 'celsius'):
+                print("Parámetro de Destino incorrecto")
+        elif origen == "kelvin":
+            if destino == "celsius":
                 valor_destino = valor - 273.15
-            elif (destino == 'farenheit'):
+            elif destino == "farenheit":
                 valor_destino = ((valor - 273.15) * 9 / 5) + 32
-            elif (destino == 'kelvin'):
+            elif destino == "kelvin":
                 valor_destino = valor
             else:
-                print('Parámetro de Destino incorrecto')
+                print("Parámetro de Destino incorrecto")
         else:
-            print('Parámetro de Origen incorrecto')
+            print("Parámetro de Origen incorrecto")
         return valor_destino
 
     def __factorial(self, numero):
-        if(type(numero) != int):
-            return 'El numero debe ser un entero'
-        if(numero < 0):
-            return 'El numero debe ser pisitivo'
-        if (numero > 1):
+        if type(numero) != int:
+            return "El numero debe ser un entero"
+        if numero < 0:
+            return "El numero debe ser pisitivo"
+        if numero > 1:
             numero = numero * self.__factorial(numero - 1)
         return numero
 
@@ -329,26 +345,26 @@ class Herramientas:
 # In[56]:
 
 
-h = Herramientas([1,1,2,5,8,8,9,11,15,16,16,16,18,20])
+h = Herramientas([1, 1, 2, 5, 8, 8, 9, 11, 15, 16, 16, 16, 18, 20])
 
 
 # In[57]:
 
 
-h.conversion_grados('celsius','farenheit')
+h.conversion_grados("celsius", "farenheit")
 
 
 # In[58]:
 
 
-h.verifica_primo()
+print(h.verifica_primo())
 
 
 # In[59]:
 
 
 moda, repe = h.valor_modal(False)
-print('El valor modal es', moda, 'y se reptie', repe, 'veces')
+print("El valor modal es", moda, "y se reptie", repe, "veces")
 
 
 # In[60]:
@@ -368,11 +384,10 @@ from herramientas import *
 # In[2]:
 
 
-h2 = Herramientas([1,1,2,3,5,6,8,8])
+h2 = Herramientas([1, 1, 2, 3, 5, 6, 8, 8])
 
 
 # In[3]:
 
 
 h2.verifica_primo()
-
