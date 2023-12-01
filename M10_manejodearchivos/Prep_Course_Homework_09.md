@@ -38,6 +38,9 @@ montañas = {'nombre':[  'Everest','K2','Kanchenjunga','Lhotse','Makalu',
 
 4) Mostrar el tamaño en MB del archivo generado en el punto 3
 
+
+
+
 5) Crear una carpeta llamada clase09_montañas_altas
 
 6) Copiar el archivo clase09_ej3.scv en la carpeta clase09_montañas_altas usando la sentencia **os.system**
